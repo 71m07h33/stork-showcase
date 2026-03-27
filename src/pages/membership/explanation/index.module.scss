@@ -1,0 +1,87 @@
+@import '../../../styles/global.scss';
+
+.content {
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    align-self: stretch;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 4.6875rem;
+
+    background-color: transparent;
+}
+
+.item {
+    display: flex;
+    width: 22.375rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.1875rem;
+
+    background-color: transparent;
+
+    img {
+        background-color: transparent;
+        filter: brightness(0) saturate(100%) invert(100%);
+    }
+
+    h3 {
+        background-color: transparent;
+        color: $white;
+    }
+
+    p {
+        flex: 1 0 0;
+        align-self: stretch;
+        white-space: pre-line;
+        background-color: transparent;
+        color: $white;
+
+        font-size: 1rem;
+        font-weight: 400;
+    }
+}
+
+.itemTitle {
+    display: flex;
+    align-items: center;
+    gap: 3.125rem;
+
+    background-color: transparent;
+
+    img {
+        width: 3.625rem;
+        height: 3.625rem;
+        aspect-ratio: 1/1;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+}
+
+
+.explanation {
+    display: flex;
+    padding: 6.25rem 3.75rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4.6875rem;
+    align-self: stretch;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../../assets/illustrations/membership-2.jpg) center / cover no-repeat;
+
+
+    h2 {
+        align-self: stretch;
+
+        color: #121212;
+        font-size: 2rem;
+        font-weight: 700;
+
+        background-color: transparent;
+        color: $white;
+    }
+}

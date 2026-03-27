@@ -1,0 +1,61 @@
+@import '../../../styles/global.scss';
+
+.roleTitle {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    color: $white;
+    white-space: pre-line;
+
+    background-color: transparent;
+}
+
+.icon {
+    width: 6.25rem;
+    height: 6.25rem;
+    aspect-ratio: 1/1;
+
+    background-color: transparent;
+}
+
+.role {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.9375rem;
+
+    background-color: transparent;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 2.8125rem 4.6875rem;
+    align-self: stretch;
+    flex-wrap: wrap;
+
+    background-color: transparent;
+}
+
+.title {
+    color: $white;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+
+    background-color: transparent;
+}
+
+.whom {
+    display: flex;
+    padding: 6.25rem 3.75rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.4375rem;
+    align-self: stretch;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../../assets/illustrations/home-2.jpg) center / cover no-repeat;
+}

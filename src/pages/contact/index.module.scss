@@ -1,0 +1,58 @@
+@import '../../styles/global.scss';
+
+
+.contact {
+    background : linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../assets/illustrations/contact-1.avif) center / cover no-repeat;
+    
+    color : $white;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    align-self: stretch;
+}
+
+.title {
+    background : none;
+
+    display: flex;
+    height: 57.125rem;
+    padding: 0 3.75rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3.4375rem;
+    flex: 1 0 0;
+
+    h1 {
+        background : none;
+        font-size: 3rem;
+        font-weight: 700;
+        align-self: stretch;
+    }
+
+    p {
+        background : none; 
+        font-size: 1.25rem;
+        font-weight: 400;
+        align-self: stretch;
+    }
+}
+
+.form {
+    background : none;
+    display: flex;
+    width: 44.6875rem;
+    padding: 0 3.75rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2.375rem;
+}
+
+.formInput {
+    background : none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5625rem;
+}

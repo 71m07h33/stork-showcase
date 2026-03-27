@@ -1,0 +1,30 @@
+@import '../../../styles/global.scss';
+
+.header {
+    display: flex;
+    height: 100vh;
+    padding: 0 34.375rem 0 3.75rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3.4375rem;
+    align-self: stretch;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../../assets/illustrations/missions-1.jpg) center / cover no-repeat;
+
+    h1 {
+        align-self: stretch;
+        color: $white;
+        font-size: 3rem;
+        font-weight: 700;
+        background-color: transparent;
+    }
+
+    p {
+        align-self: stretch;
+        color: $white;
+        font-size: 1.25rem;
+        font-weight: 400;
+        background-color: transparent;
+    }
+}
