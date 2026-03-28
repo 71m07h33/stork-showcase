@@ -74,7 +74,7 @@ export const AboutTeam = ({ isMobile }: AboutTeamProps) => {
         <div className={`${styles.team} ${isMobile ? styles.mobile : ''}`}>
             <h1 className={styles.teamTitle}>Our team</h1>
             <div className={styles.content}>
-                <div className={styles.tiles} ref={tilesRef}>
+                <div className={`${styles.tiles} ${isMobile ? styles.mobile : ''}`} ref={tilesRef}>
                     {Object.values(Members).map((member) => (
                         <div className={styles.tileWrapper} key={member}>
                             <Tile {...membersData[member]} isMobile={isMobile} />

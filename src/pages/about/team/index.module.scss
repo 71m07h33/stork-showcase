@@ -11,6 +11,10 @@
     &::-webkit-scrollbar {
         display: none;
     }
+
+    &.mobile {
+        padding: 0;
+    }
 }
 
 .tileWrapper {
@@ -63,6 +67,9 @@
 
     &.mobile {
         padding: 6.25rem 1.25rem;
+        h1 {
+            padding: 0;
+        }
     }
 }
 
