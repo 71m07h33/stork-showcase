@@ -42,7 +42,7 @@ export const MembershipPrices = () => {
                     <ul>
                         <li>SportRxiv</li>
                         <li>Communication in Kinesiology</li>
-                        <li>Kinesiology Books in Kinesiology</li>
+                        <li>Kinesiology Books</li>
                     </ul>
                 </div>
                 <div className={styles.pricing}>
