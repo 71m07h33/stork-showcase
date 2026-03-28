@@ -29,6 +29,7 @@
     background-color: transparent;
     border: none;
     padding: 0;
+    margin-left: 0.165625rem;
 
     transition: linear 0.1s;
 
@@ -36,8 +37,14 @@
     text-align: right;
     font-size: 1rem;
     font-weight: 400;
-    &.active, &:hover {
+    &.active {
         font-weight: 700;
+        margin-left: 0;
+    }
+
+    &:hover {
+        cursor: pointer;
+        opacity: 0.6;
     }
 
     display: flex;
