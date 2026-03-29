@@ -1,7 +1,7 @@
 import { Location, useLocation } from "../../app/providers/locationProvider";
 import styles from "./index.module.scss";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Input } from "./input";
 import { Button } from "../../components/ui/button";
 
@@ -10,11 +10,6 @@ const contactAddress = "dummy@example.com";
 export const Contact = () => {
     const { setLocation } = useLocation();
     setLocation(Location.Contact);
-    
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-  
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");

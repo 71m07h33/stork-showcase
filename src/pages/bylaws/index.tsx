@@ -1,14 +1,9 @@
-import { useEffect } from "react";
 import { Location, useLocation } from "../../app/providers/locationProvider";
 import styles from "./index.module.scss";
 
 export const ByLaws = () => {
     const { setLocation } = useLocation();
     setLocation(Location.ByLaws);
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
 
     return (
         <div className={styles.bylaws}>

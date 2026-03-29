@@ -8,10 +8,6 @@ export const Home = () => {
     const { setLocation } = useLocation();
     setLocation(Location.Home);
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-    
     return <div>
         <HomeHeader />
         <HomeWhy />
