@@ -39,37 +39,73 @@ const itemsData: Record<Items, { title: string; bootstrap: string; description: 
     },
 };
 
-export const HomeWhy = () => {
+type HomeWhyProps = {
+    isMobile: boolean;
+}
+
+export const HomeWhy = (props : HomeWhyProps) => {
     const navigate = useNavigate();
     const [item, setItem] = useState<Items>(Items.Sportrxiv);
     
     return (
         <div className={style.why}>
             <h1 className={style.title}>Why ?</h1>
-            <div className={style.content}>
-                <div className={style.menu}>
-                    <div className={style.menuItems}>
-                        {Object.entries(itemsData).map(([key, value]) => (
-                            <button
-                                key={key}
-                                className={`${style.menuItem} ${item === key ? style.active : ''}`}
-                                onClick={() => setItem(key as Items)}
-                            >
-                                {value.title}
-                                {item === key ? <span className={`${style.rectangle} ${style.selected}`} /> : <span className={`${style.rectangle} ${style.unselected}`} />}
-                            </button>
-                        ))}
+
+            {props.isMobile ?
+                (
+                    <div className={style.mobileContent}>
+                        <div className={style.mobileMenu}>
+                            <div className={style.mobileMenuItems}>
+                                {Object.entries(itemsData).map(([key, value]) => (
+                                    <button
+                                        key={key}
+                                        className={`${style.mobileMenuItem} ${item === key ? style.active : ''}`}
+                                        onClick={() => setItem(key as Items)}
+                                    >
+                                        {value.title}
+                                        {item === key ? <span className={`${style.mobileRectangle} ${style.selected}`} /> : <span className={`${style.mobileRectangle} ${style.unselected}`} />}
+                                    </button>
+                                ))}
+                            </div>
+                            <span className={style.horizontalSeparator} />
+                        </div>
+                        <div className={style.mobileExplanation}>
+                            <h2 className={style.mobileExplanationTitle}>{itemsData[item].bootstrap}</h2>
+                            <p className={style.mobileExplanationDescription}>{itemsData[item].description}</p>
+                            <Button color="black" onClick={() => navigate('/missions')}>
+                                {`Learn more about ${itemsData[item].title}`}
+                            </Button>
+                        </div>
                     </div>
-                    <span className={style.verticalSeparator} />
-                </div>
-                <div className={style.explanation}>
-                    <h2 className={style.explanationTitle}>{itemsData[item].bootstrap}</h2>
-                    <p className={style.explanationDescription}>{itemsData[item].description}</p>
-                        <Button color="black" onClick={() => navigate('/missions')}>
-                            {`Learn more about ${itemsData[item].title}`}
-                        </Button>
-                </div>
-            </div>
+                )
+            :
+                (
+                    <div className={style.content}>
+                        <div className={style.menu}>
+                            <div className={style.menuItems}>
+                                {Object.entries(itemsData).map(([key, value]) => (
+                                    <button
+                                        key={key}
+                                        className={`${style.menuItem} ${item === key ? style.active : ''}`}
+                                        onClick={() => setItem(key as Items)}
+                                    >
+                                        {value.title}
+                                        {item === key ? <span className={`${style.rectangle} ${style.selected}`} /> : <span className={`${style.rectangle} ${style.unselected}`} />}
+                                    </button>
+                                ))}
+                            </div>
+                            <span className={style.verticalSeparator} />
+                        </div>
+                        <div className={style.explanation}>
+                            <h2 className={style.explanationTitle}>{itemsData[item].bootstrap}</h2>
+                            <p className={style.explanationDescription}>{itemsData[item].description}</p>
+                                <Button color="black" onClick={() => navigate('/missions')}>
+                                    {`Learn more about ${itemsData[item].title}`}
+                                </Button>
+                        </div>
+                    </div>
+                )
+            }
         </div>
     )
 }

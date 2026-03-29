@@ -3,14 +3,17 @@
 .title {
     font-size: 3rem;
     font-weight: 700;
+    color: $white;
 
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 1 0 0;
 
-    color: $white;
-    
+    &.mobile {
+        flex: none;
+        font-size: 2.5rem;
+    }
 }
 
 .content {
@@ -21,14 +24,19 @@
     gap: 3.4375rem;
     flex: 1 0 0;
 
-    
-
     p {
         font-size: 1.25rem;
         font-weight: 400;
 
         color: $white;
-        
+    }
+
+    &.mobile {
+        align-items: flex-start;
+        gap: 2rem;
+        align-self: stretch;
+
+        flex: none;
     }
 }
 
@@ -40,4 +48,12 @@
     align-self: stretch;
 
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../../assets/illustrations/home-1.avif) center / cover no-repeat;
+
+    &.mobile {
+        padding: 0 1.25rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 3rem;
+    }
 }
