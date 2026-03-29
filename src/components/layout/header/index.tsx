@@ -20,7 +20,10 @@ export const Header = () => {
     return (
         <header className={styles.header}>
             <button className={styles.logo}
-                    onClick={() => navigate('/')}
+                    onClick={() => {
+                        navigate('/');
+                        setOverlayIsOpen(false); 
+                    }}
             >
                 STORK
             </button>
