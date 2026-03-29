@@ -22,13 +22,17 @@ const itemsData: Record<Items, { annualPriceInCAD: number }> = {
     },
 };
 
-export const MembershipPrices = () => {
+type MembershipPricesProps = {
+    isMobile: boolean;
+};
+
+export const MembershipPrices = (props: MembershipPricesProps) => {
     const [item, setItem] = useState<Items>(Items.Students);
     
     return (
         <div className={styles.prices}>
             <h1>Membership</h1>
-            <div className={styles.content}>
+            <div className={`${styles.content} ${props.isMobile ? styles.mobile : ''}`}>
                 <div>
                     <p>Grant you access to</p>
                     <ul>
@@ -47,7 +51,7 @@ export const MembershipPrices = () => {
                 </div>
                 <div className={styles.pricing}>
                     <div className={styles.menu}>
-                        <div className={styles.menuItems}>
+                        <div className={`${styles.menuItems} ${props.isMobile ? styles.mobile : ''}`}>
                             {Object.entries(itemsData).map(([key, value]) => (
                                 <button
                                     key={key}
