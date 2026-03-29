@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useOverlay } from '../app/providers/overlayProvider';
 
-const BREAKPOINT = 800;
+const BREAKPOINT = 960;
 
 export const useIsMobileWidth = (): boolean => {
     const { setOverlayIsOpen } = useOverlay();

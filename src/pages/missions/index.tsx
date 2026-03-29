@@ -10,7 +10,7 @@ export const Missions = () => {
     const isMobile = useIsMobileWidth();
     
     return <div>
-        <MissionsHeader />
-        <MissionsGoals />
+        <MissionsHeader isMobile={isMobile} />
+        <MissionsGoals isMobile={isMobile} />
     </div>
 }

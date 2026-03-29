@@ -9,7 +9,7 @@
     justify-content: space-between;
     row-gap: 4.6875rem;
 
-    background-color: transparent;
+    
 }
 
 .item {
@@ -19,15 +19,15 @@
     align-items: flex-start;
     gap: 2.1875rem;
 
-    background-color: transparent;
+    
 
     img {
-        background-color: transparent;
+        
         filter: brightness(0) saturate(100%) invert(100%);
     }
 
     h3 {
-        background-color: transparent;
+        
         color: $white;
     }
 
@@ -35,7 +35,7 @@
         flex: 1 0 0;
         align-self: stretch;
         white-space: pre-line;
-        background-color: transparent;
+        
         color: $white;
 
         font-size: 1rem;
@@ -48,7 +48,7 @@
     align-items: center;
     gap: 3.125rem;
 
-    background-color: transparent;
+    
 
     img {
         width: 3.625rem;
@@ -81,7 +81,7 @@
         font-size: 2rem;
         font-weight: 700;
 
-        background-color: transparent;
+        
         color: $white;
     }
 }

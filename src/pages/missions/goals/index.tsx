@@ -42,14 +42,18 @@ const itemsData: Record<Items, { icon: string; title: string; description: strin
     },
 };
 
-export const MissionsGoals = () => {
+type MissionsGoalsProps = {
+    isMobile: boolean;
+}
+
+export const MissionsGoals = (props : MissionsGoalsProps) => {
     return (
-        <div className={styles.goals}>
+        <div className={`${styles.goals} ${props.isMobile ? styles.mobile : ''}`}>
             <h2>Our core goals</h2>
             <div className={styles.container}>
                 <div className={styles.content}>
                     {Object.entries(itemsData).map(([key, { icon, title, description }]) => (
-                        <div key={key} className={styles.item}>
+                        <div key={key} className={`${styles.item} ${props.isMobile ? styles.mobile : ''}`}>
                             <div className={styles.itemTitle}>
                                 <img src={icon} alt={`${title} icon`} />
                                 <h3>{title}</h3>
