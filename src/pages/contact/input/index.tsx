@@ -5,12 +5,13 @@ type inputProps = {
     value?: string;
     height?: "line" | "paragraph";
     onChange: (value: string) => void;
+    isMobile?: boolean;
 }
 
 export const Input = (props: inputProps) => {
     const value = props.value || "";
     return (
-        <div className={styles.input}>
+        <div className={`${styles.input} ${props.isMobile ? styles.mobile : ""}`}>
             <label>{props.label}</label>
             {props.height === "paragraph" ? (
                 <textarea

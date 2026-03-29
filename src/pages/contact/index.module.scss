@@ -9,6 +9,13 @@
     align-items: center;
     gap: 0.625rem;
     align-self: stretch;
+    
+    &.mobile {
+        flex-direction: column;
+        gap: 0.625rem;
+        justify-content: center;
+        align-items: flex-start;
+    }
 }
 
 .title {
@@ -22,19 +29,24 @@
     align-items: flex-start;
     gap: 3.4375rem;
     flex: 1 0 0;
+    align-self: stretch;
+
 
     h1 {
         background : none;
         font-size: 3rem;
         font-weight: 700;
-        align-self: stretch;
     }
 
     p {
         background : none; 
         font-size: 1.25rem;
         font-weight: 400;
-        align-self: stretch;
+    }
+
+    &.mobile {
+        padding: 6.25rem 1.25rem 3rem 1.25rem;
+        gap: 2rem;
     }
 }
 
@@ -47,6 +59,13 @@
     justify-content: center;
     align-items: flex-start;
     gap: 2.375rem;
+
+    &.mobile {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 1.25rem 6.25rem 1.25rem;
+        align-self: stretch;
+    }
 }
 
 .formInput {

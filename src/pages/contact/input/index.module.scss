@@ -57,4 +57,15 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    &.mobile {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.625rem;
+
+        input, textarea {
+            box-sizing: border-box;
+            width: 100%;
+        }
+    }
 }
