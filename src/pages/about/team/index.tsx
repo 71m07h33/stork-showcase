@@ -60,12 +60,16 @@ type AboutTeamProps = {
 }
 
 export const AboutTeam = ({ isMobile }: AboutTeamProps) => {
-    const tilesRef = useRef<HTMLDivElement>(null);
+    const tileRef = useRef<HTMLDivElement>(null);
+    const parentRef = useRef<HTMLDivElement>(null);
 
     const scroll = (direction: 'left' | 'right') => {
-        if (!tilesRef.current) return;
-        const scrollAmount = tilesRef.current.clientWidth * 0.6;
-        tilesRef.current.scrollBy({
+        if (!tileRef.current || !parentRef.current) return;
+
+        const remToPx = (rem: number) => rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const scrollAmount = tileRef.current.clientWidth + remToPx(4.6875);
+
+        parentRef.current.scrollBy({
             left: direction === 'left' ? -scrollAmount : scrollAmount,
         });
     };
@@ -74,9 +78,9 @@ export const AboutTeam = ({ isMobile }: AboutTeamProps) => {
         <div className={`${styles.team} ${isMobile ? styles.mobile : ''}`}>
             <h1 className={styles.teamTitle}>Our team</h1>
             <div className={styles.content}>
-                <div className={`${styles.tiles} ${isMobile ? styles.mobile : ''}`} ref={tilesRef}>
+                <div className={`${styles.tiles} ${isMobile ? styles.mobile : ''}`} ref={parentRef}>
                     {Object.values(Members).map((member) => (
-                        <div className={styles.tileWrapper} key={member}>
+                        <div className={styles.tileWrapper} key={member} ref={tileRef}>
                             <Tile {...membersData[member]} isMobile={isMobile} />
                         </div>
                     ))}
