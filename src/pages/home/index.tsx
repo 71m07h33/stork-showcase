@@ -1,8 +1,8 @@
 import { Location, useLocation } from "../../app/providers/locationProvider";
 import { useIsMobileWidth } from "../../hooks/useIsMobileWidth";
 import { HomeHeader } from "./header";
-import { HomeWhom } from "./whom";
-import { HomeWhy } from "./why";
+import { HomeSupport } from "./support";
+import { HomeOffer } from "./offer";
 
 export const Home = () => {
     const { setLocation } = useLocation();
@@ -12,7 +12,7 @@ export const Home = () => {
 
     return <div>
         <HomeHeader isMobile={isMobile} />
-        <HomeWhy isMobile={isMobile} />
-        <HomeWhom />
+        <HomeOffer isMobile={isMobile} />
+        <HomeSupport />
     </div>;
 }

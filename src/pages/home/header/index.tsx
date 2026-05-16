@@ -11,11 +11,16 @@ export const HomeHeader = (props: HomeHeaderProps) => {
 
     return (
         <div className={`${styles.header} ${props.isMobile ? styles.mobile : ''}`} >
-            <p className={`${styles.title} ${props.isMobile ? styles.mobile : ''}`}>Society for<br/>Transparency,<br/>Openness, and<br/>Replication in<br/>Kinesiology</p>
+            <p className={`${styles.title} ${props.isMobile ? styles.mobile : ''}`}><span className={styles.acronym}>S</span>ociety for<br/><span className={styles.acronym}>T</span>ransparency,<br/><span className={styles.acronym}>O</span>penness, and<br/><span className={styles.acronym}>R</span>eplication in<br/><span className={styles.acronym}>K</span>inesiology</p>
             <div className={`${styles.content} ${props.isMobile ? styles.mobile : ''}`}>
-                <p>Providing a platform to come together to improve methods and practices within our disciplines</p>
+                <div className={styles.textContent}>
+                    <p>STORK unites students, professionals, and scientists who aim to elevate research methods across all domains related to movement sciences, including sports, exercise, physical activity, physiology, biomechanics, neuroscience, rehabilitation sciences, nutrition.<br/><br/>
+                    STORK is also open to all who share our passion for improvement: educators, coaches, practitioners, athletes, and science enthusiasts.<br/><br/>
+                    As a non-profit, we focus solely on enhancing research quality.</p>
+                </div>
                 <Button
-                    color="white"
+                    color="green"
+                    selected={true}
                     onClick={() => navigate('/missions')}
                 >
                     Find out more

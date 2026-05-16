@@ -6,9 +6,7 @@
     font-weight: 700;
 
     display: flex;
-    padding-right: 3.75rem;
     align-items: center;
-    gap: 0.625rem;
 }
 
 .subtitle {
@@ -83,10 +81,11 @@
 
 .social {
     display: flex;
-    padding: 3.125rem 3.75rem;
+    padding: 3rem 3.5rem;
     justify-content: space-between;
     align-items: center;
     align-self: stretch;
+    gap: 4rem;
 
     &.mobile {
         flex-direction: column;

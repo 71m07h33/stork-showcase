@@ -55,12 +55,6 @@ export const Header = () => {
                     >
                         About us
                     </Navigation>
-                    <Navigation
-                        selected={location === Location.Contact}
-                        onClick={() => navigate('/contact-us')}
-                    >
-                        Contact us
-                    </Navigation>
                     <Button
                             selected={location === Location.Membership}
                             color="black"

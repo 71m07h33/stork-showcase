@@ -23,7 +23,7 @@ import styles from './index.module.scss';
 type ButtonProps = {
     children: React.ReactNode;
     selected?: boolean;
-    color: 'black' | 'white';
+    color: 'black' | 'white' | 'green';
     size?: number;
     onClick?: () => void; // Optional click handler, in case the button is used for navigation (e.g., wrapped in an <a> tag)
 }

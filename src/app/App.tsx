@@ -4,7 +4,6 @@ import { LocationProvider } from "./providers/locationProvider";
 import { Navigate, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home } from "../pages/home";
 import { Missions } from "../pages/missions";
-import { Contact } from "../pages/contact";
 import { Membership } from "../pages/membership";
 import { Footer } from "../components/layout/footer";
 import styles from "./App.module.scss";
@@ -44,7 +43,6 @@ function AppContent() {
               <Route path="/" element={<Home />} />
               <Route path="/missions" element={<Missions />} />
               <Route path="/about-us" element={<About />} />
-              <Route path="/contact-us" element={<Contact />} />
               <Route path="/membership" element={<Membership />} />
               <Route path="/by-laws" element={<ByLaws />} />
               <Route path="/site-map" element={<SiteMap />} />

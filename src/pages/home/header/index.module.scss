@@ -5,10 +5,10 @@
     font-weight: 700;
     color: $white;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: left;
+    align-self: center;
     flex: 1 0 0;
+
 
     &.mobile {
         flex: none;
@@ -25,10 +25,20 @@
     flex: 1 0 0;
 
     p {
-        font-size: 1.25rem;
+        font-size: 0.875rem;
         font-weight: 400;
 
-        color: $white;
+        color: $black;
+    }
+
+    .textContent {
+        display: flex;
+        padding: 1rem 1.5rem;
+        justify-content: center;
+        align-items: center;
+        gap: 0.625rem;
+        align-self: stretch;
+        background: $white;
     }
 
     &.mobile {
@@ -56,4 +66,8 @@
         align-items: flex-start;
         gap: 3rem;
     }
+}
+
+.acronym {
+    color: $green;
 }
