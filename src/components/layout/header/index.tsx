@@ -108,8 +108,8 @@ export const MenuOverlay = () => {
                 </Navigation>
             </div>
             <Button
-                    selected={location === Location.Membership}
-                    color="black"
+                    color="green"
+                    selected={true}
                     size={1}
                     onClick={() => {
                         navigate('/membership');
