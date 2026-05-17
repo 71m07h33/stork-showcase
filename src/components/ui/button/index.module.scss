@@ -67,7 +67,8 @@
         }
 
         &:hover {
-            background-color: $green;
+            background-color: $darkGreen;
+            border-color: $darkGreen;
             color: $black;
             cursor: pointer;
             img {

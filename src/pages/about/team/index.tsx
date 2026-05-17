@@ -1,58 +1,89 @@
-import { useRef } from 'react';
+import Francois from '../../../assets/comittee/FrancoisJabouille.jpg';
+import Job from '../../../assets/comittee/JobFransen.jpg';
+import Layan from '../../../assets/comittee/LayanFessler.png';
+import Matthieu from '../../../assets/comittee/MatthieuBoisgontier.jpg';
+import Sjoerd from '../../../assets/comittee/SjoerdBruijn.jpg';
+import Timothee from '../../../assets/comittee/TimotheeDumas.jpg';
+import Zack from '../../../assets/comittee/ZackZenko.jpg';
+import LinkedIn from '../../../assets/icons/linkedin.svg';
+
 import styles from './index.module.scss';
 
-import JohnDoePicture from '../../../assets/comittee/mock.jpg';
-import { Tile, TileProps } from '../../../components/ui/tile';
-
 enum Members {
-    JohnDoe1 = 'JohnDoe1',
-    JohnDoe2 = 'JohnDoe2',
-    JohnDoe3 = 'JohnDoe3',
-    JohnDoe4 = 'JohnDoe4',
-    JohnDoe5 = 'JohnDoe5',
+    Francois = 'Francois Jabouille',
+    Job = 'Job Fransen',
+    Layan = 'Layan Fessler',
+    Matthieu = 'Matthieu Boisgontier',
+    Sjoerd = 'Sjoerd Bruijn',
+    Timothee = 'Timothee Dumas',
+    Zack = 'Zack Zenko',
+    Aaron = 'Aaron Caldwell'
 }
 
-const membersData: Record<Members, TileProps> = {
-    [Members.JohnDoe1]: {
-        picture: JohnDoePicture,
-        name: 'John Doe',
-        academy: 'PH.D',
-        role: 'Publication chair',
-        linkedin: 'https://www.linkedin.com/',
-        twitter: 'https://www.twitter.com/',
+export type MemberProps = {
+    picture?: string | null;
+    name: string;
+    academy: string;
+    role: string;
+    linkedin?: string | null;
+    isMobile?: boolean;
+}
+
+const membersData: Record<Members, MemberProps> = {
+    [Members.Job]: {
+        picture: Job,
+        name: 'Job Fransen',
+        academy: 'PhD',
+        role: 'Chair',
+        linkedin: 'https://www.linkedin.com/in/jobfran/',
     },
-    [Members.JohnDoe2]: {
-        picture: JohnDoePicture,
-        name: 'John Doe',
-        academy: 'PH.D',
-        role: 'Publication chair',
-        linkedin: 'https://www.linkedin.com/',
-        twitter: 'https://www.twitter.com/',
+    [Members.Matthieu]: {
+        picture: Matthieu,
+        name: 'Matthieu Boisgontier',
+        academy: 'PhD',
+        role: 'Chair of Publications  (CiK, SportRxiv, K-Books)',
+        linkedin: 'https://www.linkedin.com/in/matthieuboisgontier/',
     },
-    [Members.JohnDoe3]: {
-        picture: JohnDoePicture,
-        name: 'John Doe',
-        academy: 'PH.D',
-        role: 'Publication chair',
-        linkedin: 'https://www.linkedin.com/',
-        twitter: 'https://www.twitter.com/',
+    [Members.Sjoerd]: {
+        picture: Sjoerd,
+        name: 'Sjoerd Bruijn',
+        academy: 'PhD',
+        role: 'Editor in Chief of Communications in Kinesiology',
+        linkedin: 'https://www.linkedin.com/in/sjoerdbruijn/',
     },
-    [Members.JohnDoe4]: {
-        picture: JohnDoePicture,
-        name: 'John Doe',
-        academy: 'PH.D',
-        role: 'Publication chair',
-        linkedin: 'https://www.linkedin.com/',
-        twitter: 'https://www.twitter.com/',
+    [Members.Layan]: {
+        picture: Layan,
+        name: 'Layan Fessler',
+        academy: 'PhD',
+        role: 'Moderator in Chief of SportRxiv',
+        linkedin: 'https://www.linkedin.com/in/layan-fessler/',
     },
-    [Members.JohnDoe5]: {
-        picture: JohnDoePicture,
-        name: 'John Doe',
-        academy: 'PH.D',
-        role: 'Publication chair',
-        linkedin: 'https://www.linkedin.com/',
-        twitter: 'https://www.twitter.com/',
+    [Members.Zack]: {
+        picture: Zack,
+        name: 'Zack Zenko',
+        academy: 'PhD',
+        role: 'Editor in Chief of Kinesiology Books (K-Books)',
     },
+    [Members.Francois]: {
+        picture: Francois,
+        name: 'Francois Jabouille',
+        academy: 'PhD Candidate',
+        role: 'Treasurer',
+        linkedin: 'https://www.linkedin.com/in/fran%C3%A7ois-jabouille/',
+    },
+    [Members.Aaron]: {
+        name: 'Aaron Caldwell',
+        academy: 'PhD',
+        role: 'Production Editor (CiK)',
+        linkedin: 'https://www.linkedin.com/in/acaldwe7/',
+    },
+    [Members.Timothee]: {
+        picture: Timothee,
+        name: 'Timothée Dumas',
+        academy: 'PhD Candidate',
+        role: 'Webpage Manager',
+        linkedin: 'https://www.linkedin.com/in/timoth%C3%A9e-dumas-702a151a1/?locale=en',
+    }
 };
 
 type AboutTeamProps = {
@@ -60,35 +91,34 @@ type AboutTeamProps = {
 }
 
 export const AboutTeam = ({ isMobile }: AboutTeamProps) => {
-    const tileRef = useRef<HTMLDivElement>(null);
-    const parentRef = useRef<HTMLDivElement>(null);
-
-    const scroll = (direction: 'left' | 'right') => {
-        if (!tileRef.current || !parentRef.current) return;
-
-        const remToPx = (rem: number) => rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
-        const scrollAmount = tileRef.current.clientWidth + remToPx(4.6875);
-
-        parentRef.current.scrollBy({
-            left: direction === 'left' ? -scrollAmount : scrollAmount,
-        });
-    };
-
     return (
         <div className={`${styles.team} ${isMobile ? styles.mobile : ''}`}>
-            <h1 className={styles.teamTitle}>Our team</h1>
-            <div className={styles.content}>
-                <div className={`${styles.tiles} ${isMobile ? styles.mobile : ''}`} ref={parentRef}>
-                    {Object.values(Members).map((member) => (
-                        <div className={styles.tileWrapper} key={member} ref={tileRef}>
-                            <Tile {...membersData[member]} isMobile={isMobile} />
-                        </div>
-                    ))}
+            {Object.entries(membersData).map(([member, props]) => (
+                <Member key={member} {...props} isMobile={isMobile} />
+            ))}
+        </div>
+    );
+}
+
+const Member = (props: MemberProps) => {
+    return (
+        <div key={props.name} className={`${styles.member} ${props.isMobile ? styles.mobile : ''}`}>
+            {props.picture ? (
+                <img key={props.name} src={props.picture} alt={props.name} className={styles.picture}/>
+            ) : (
+                <div className={styles.picture} />
+            )}
+            <div className={`${styles.info} ${props.isMobile ? styles.mobile : ''}`}>
+                <div className={`${styles.title}`}>
+                    <h3>{props.name}</h3>
+                    <p>{props.academy}</p>
                 </div>
-                <div className={styles.direction}>
-                    <button className={styles.button} onClick={() => scroll('left')}>←</button>
-                    <button className={styles.button} onClick={() => scroll('right')}>→</button>
-                </div>
+                <p>{props.role}</p>
+                {props.linkedin && (
+                    <a href={props.linkedin} target="_blank" rel="noopener noreferrer">
+                        <img src={LinkedIn} alt={`${props.name} LinkedIn`} />
+                    </a>
+                )}
             </div>
         </div>
     );

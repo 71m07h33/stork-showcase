@@ -14,3 +14,7 @@ a, a:visited, a:active, a:hover {
   -webkit-tap-highlight-color: transparent;
   -webkit-text-fill-color: inherit !important; /* iOS fix */
 }
+
+p {
+  text-align: justify;
+}

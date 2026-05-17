@@ -14,6 +14,7 @@ const siteMapLinks = [
 const externalLinks = [
     { label: "SportRxiv", url: "https://sportrxiv.org/index.php/server" },
     { label: "Communication in Kinesiology", url: "https://storkjournals.org/index.php/cik" },
+    { label: "Kinesiology Books", url: "https://kinesiologybooks.org/index.php/stork/index" },
 ];
 
 export const SiteMap = () => {

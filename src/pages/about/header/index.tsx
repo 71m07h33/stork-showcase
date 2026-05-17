@@ -7,8 +7,8 @@ interface AboutHeaderProps {
 export const AboutHeader = ({ isMobile }: AboutHeaderProps) => {
     return (
         <div className={`${styles.header} ${isMobile ? styles.mobile : ''}`}>
-            <h1>Forming Committee Spotlight</h1>
-            <p>Discover the experts steering STORK toward open science excellence. <br /> Their diverse backgrounds unite to elevate research standards in movement sciences.</p>
+            <h1>Meet the steering committee</h1>
+            <p>Discover the experts steering STORK toward open science excellence to elevate research standards in our fields.</p>
         </div>
     )
 };
