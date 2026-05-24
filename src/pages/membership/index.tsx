@@ -1,6 +1,5 @@
 import { Location, useLocation } from "../../app/providers/locationProvider";
 import { useIsMobileWidth } from "../../hooks/useIsMobileWidth";
-import { MembershipExplanation } from "./explanation";
 import { MembershipHeader } from "./header";
 import { MembershipPrices } from "./prices";
 
@@ -14,7 +13,6 @@ export const Membership = () => {
         <div>
             <MembershipHeader isMobile={isMobile} />
             <MembershipPrices isMobile={isMobile} />
-            <MembershipExplanation />
         </div>
     );
 }

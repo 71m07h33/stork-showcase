@@ -5,6 +5,7 @@ import Matthieu from '../../../assets/comittee/MatthieuBoisgontier.jpg';
 import Sjoerd from '../../../assets/comittee/SjoerdBruijn.jpg';
 import Timothee from '../../../assets/comittee/TimotheeDumas.jpg';
 import Zack from '../../../assets/comittee/ZackZenko.jpg';
+import Aaron from '../../../assets/comittee/AaronCaldwell.jpg';
 import LinkedIn from '../../../assets/icons/linkedin.svg';
 
 import styles from './index.module.scss';
@@ -72,6 +73,7 @@ const membersData: Record<Members, MemberProps> = {
         linkedin: 'https://www.linkedin.com/in/fran%C3%A7ois-jabouille/',
     },
     [Members.Aaron]: {
+        picture: Aaron,
         name: 'Aaron Caldwell',
         academy: 'PhD',
         role: 'Production Editor (CiK)',

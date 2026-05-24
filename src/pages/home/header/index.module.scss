@@ -28,7 +28,7 @@
         font-size: 0.875rem;
         font-weight: 400;
 
-        color: $black;
+        color: $white;
     }
 
     .textContent {
@@ -38,7 +38,8 @@
         align-items: center;
         gap: 0.625rem;
         align-self: stretch;
-        background: $white;
+        border-radius: 0.5rem;
+        background: rgba($black, 0.95);
     }
 
     &.mobile {

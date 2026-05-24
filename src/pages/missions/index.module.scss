@@ -29,6 +29,10 @@
     gap: 4rem;
     align-self: stretch;
     flex-wrap: wrap;
+
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    background: rgba($black, 0.95);
 }
 
 .goals {
@@ -51,6 +55,7 @@
 
         font-size: 3rem;
         font-weight: 700;
+        text-transform: uppercase;
     }
 
     h3 {

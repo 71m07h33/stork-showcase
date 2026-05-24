@@ -1,23 +1,31 @@
 @import '../../../styles/global.scss';
 
+.verticalSeparator {
+	display: inline-block;
+	width: 0.125rem;
+	height: auto;
+	align-self: stretch;
+	background-color: $grey;
+	vertical-align: middle;
+}
 
 .horizontalSeparator {
     display: block;
     width: auto;
 	height: 0.125rem;
 	align-self: stretch;
-	background-color: $green;
+	background-color: $grey;
 }
 
 .rectangle {
     display: inline-block;
-	height: 0.375rem;
-    width: 1.4375rem;
+	width: 0.375rem;
+    height: 1.4375rem;
 	background-color: $black;
 	vertical-align: middle;
 
     &.selected {
-        background-color: $black;
+        background-color: $green;
     }
 
     &.unselected {
@@ -26,6 +34,109 @@
 }
 
 .menuItem {
+    
+    border: none;
+    padding: 0;
+    margin-left: 0.165625rem;
+
+    transition: linear 0.1s;
+
+    color: $black;
+    background-color: transparent;
+    text-align: right;
+    font-size: 1rem;
+    font-weight: 400;
+    &.active {
+        font-weight: 700;
+        margin-left: 0;
+    }
+
+    &:hover {
+        cursor: pointer;
+        opacity: 0.6;
+    }
+
+    display: flex;
+    align-items: center;
+    gap: 3.125rem;
+}
+
+.menuItems{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2.8125rem;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.explanationTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.explanationDescription {
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.explanation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.8125rem;
+    flex: 1 0 0;
+
+    h2 {
+        margin-bottom: 0.5rem;
+    }
+}
+
+.content {
+    display: flex;
+    align-items: flex-start;
+    gap: 8.125rem;
+    align-self: stretch;
+}
+
+.offer {
+    display: flex;
+    padding: 6.25rem 3.75rem;
+    flex-direction: column;
+    gap: 3.4375rem;
+    align-self: stretch;
+}
+
+.mobileContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    row-gap: 3.4375rem;
+    align-self: stretch;
+    flex-wrap: wrap;
+}
+
+.mobileMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.mobileMenuItems {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 1.5625rem;
+    align-self: stretch;
+    flex-wrap: wrap;
+}
+
+.mobileMenuItem {
     border: none;
     padding: 0;
 
@@ -33,7 +144,7 @@
 
     color: $black;
     background-color: transparent;
-    text-align: right;
+    text-align: left;
     font-size: 1rem;
     font-weight: 400;
     margin: 0rem 0.0828125rem;
@@ -54,76 +165,42 @@
     gap: 0.3125rem;
 }
 
-.menuItems{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    gap: 2.8125rem;
+.mobileRectangle {
+    display: inline-block;
+	height: 0.375rem;
+    width: 1.4375rem;
+	background-color: $black;
+	vertical-align: middle;
 
-    &.mobile {
-        align-items: flex-start;
-        align-content: flex-start;
-        gap: 1.5625rem;
-        align-self: stretch;
-        flex-wrap: wrap;
+    &.selected {
+        background-color: $green;
+    }
+
+    &.unselected {
+        background-color: transparent;
     }
 }
 
-.menu {
+.mobileExplanation {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    gap: 2.8125rem;
+    flex: 1 0 0;
+
 }
 
-.explanationTitle {
-    font-size: 1.5rem;
-    font-weight: 400;
+.mobileExplanationTitle {
+    font-size: 1rem;
+    font-weight: 700;
 }
 
-.explanationDescription {
+.mobileExplanationDescription {
     font-size: 0.875rem;
     font-weight: 400;
 }
 
-.explanation {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    align-self: stretch;
-
-    &.mobile {
-        align-content: flex-start;
-        row-gap: 3.4375rem;
-        align-self: stretch;
-        flex-wrap: wrap;
-    }
-}
-
-.pricing {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2.8125rem;
-}
-
-.prices {
-    display: flex;
-    padding: 6.25rem 3.75rem;
-    flex-direction: column;
-    align-items: center;
-    gap: 3.4375rem;
-    align-self: stretch;
-
-    h1 {
-        align-self: stretch;
-        font-size: 2rem;
-        font-style: normal;
-        font-weight: 700;
-    }
+.title {
+    text-transform: uppercase;
 }

@@ -1,79 +1,125 @@
 import { useState } from 'react';
+import style from './index.module.scss';
 import { Button } from '../../../components/ui/button';
-import styles from './index.module.scss';
-
-const stripeLink = 'https://www.google.com'; // TODO: replace with real link
+import { useNavigate } from 'react-router';
 
 enum Items {
     Students = 'Students',
     Emerging = 'Emerging Professionals',
     Senior = 'Senior Professionals',
+    Donation = 'Make a donation',
 }
 
-const itemsData: Record<Items, { annualPriceInCAD: number }> = {
-    [Items.Students]: {
-        annualPriceInCAD: 18,
-    },
-    [Items.Emerging]: {
-        annualPriceInCAD: 30,
-    },
-    [Items.Senior]: {
-        annualPriceInCAD: 48,
-    },
+const itemsData: Record<Items, number | undefined> = {
+    [Items.Students]: 18,
+    [Items.Emerging]: 30,
+    [Items.Senior]: 48,
+    [Items.Donation]: undefined,
 };
 
 type MembershipPricesProps = {
     isMobile: boolean;
-};
+}
 
-export const MembershipPrices = (props: MembershipPricesProps) => {
+export const MembershipPrices = (props : MembershipPricesProps) => {
+    const navigate = useNavigate();
     const [item, setItem] = useState<Items>(Items.Students);
     
     return (
-        <div className={styles.prices}>
-            <h1>Membership</h1>
-            <div className={`${styles.content} ${props.isMobile ? styles.mobile : ''}`}>
-                <div>
-                    <p>Grant you access to</p>
-                    <ul>
-                        <li>Members area</li>
-                        <li>Webinars</li>
-                        <li>Workshops</li>
-                    </ul>
-                    <br />
-                    <br />
-                    <p>Submit your work to</p>
-                    <ul>
-                        <li>SportRxiv</li>
-                        <li>Communication in Kinesiology</li>
-                        <li>Kinesiology Books</li>
-                    </ul>
-                </div>
-                <div className={styles.pricing}>
-                    <div className={styles.menu}>
-                        <div className={`${styles.menuItems} ${props.isMobile ? styles.mobile : ''}`}>
-                            {Object.entries(itemsData).map(([key, value]) => (
-                                <button
-                                    key={key}
-                                    className={`${styles.menuItem} ${item === key ? styles.active : ''}`}
-                                    onClick={() => setItem(key as Items)}
-                                >
-                                    {key}
-                                    {item === key ? <span className={`${styles.rectangle} ${styles.selected}`} /> : <span className={`${styles.rectangle} ${styles.unselected}`} />}
-                                </button>
-                            ))}
+        <div className={style.offer}>
+            <h1 className={style.title}>Support us</h1>
+
+            {props.isMobile ?
+                (
+                    <div className={style.mobileContent}>
+                        <div className={style.mobileMenu}>
+                            <div className={style.mobileMenuItems}>
+                                {Object.entries(itemsData).map(([key, value]) => (
+                                    <button
+                                        key={key}
+                                        className={`${style.mobileMenuItem} ${item === key ? style.active : ''}`}
+                                        onClick={() => setItem(key as Items)}
+                                    >
+                                        {key}
+                                        {item === key ? <span className={`${style.mobileRectangle} ${style.selected}`} /> : <span className={`${style.mobileRectangle} ${style.unselected}`} />}
+                                    </button>
+                                ))}
+                            </div>
+                            <span className={style.horizontalSeparator} />
                         </div>
-                        <span className={styles.horizontalSeparator} />
+
+
+                        {itemsData[item] !== undefined ?
+                            <div className={style.mobileExplanation}>
+                                <div>
+                                    <h2 className={style.mobileExplanationTitle}>
+                                        CAD $${itemsData[item]} per year
+                                    </h2>
+                                    <p>
+                                        Membership fee for ${item.toString().toLowerCase()}
+                                    </p>
+                                </div>
+                                <Button color="green" selected={true} onClick={() => navigate('/missions')}>
+                                    {`Join as a ${item.toString().toLowerCase()}`}
+                                </Button>
+                            </div>
+                            :
+                             <div className={style.mobileExplanation}>
+                                <h2 className={style.mobileExplanationTitle}>
+                                    Make a donation of any amount you wish
+                                </h2>
+                                <Button color="green" selected={true} onClick={() => alert('Redirecting to Stripe API...')}>
+                                    Donate to STORK
+                                </Button>
+                            </div>
+                        }
                     </div>
-                    <div className={styles.explanation}>
-                        <h2 className={styles.explanationTitle}><b>${itemsData[item].annualPriceInCAD} CAD</b> per year</h2>
-                        <p className={styles.explanationDescription}>Membership fee for {item}</p>
+                )
+            :
+                (
+                    <div className={style.content}>
+                        <div className={style.menu}>
+                            <div className={style.menuItems}>
+                                {Object.entries(itemsData).map(([key, value]) => (
+                                    <button
+                                        key={key}
+                                        className={`${style.menuItem} ${item === key ? style.active : ''}`}
+                                        onClick={() => setItem(key as Items)}
+                                    >
+                                        {key}
+                                        {item === key ? <span className={`${style.rectangle} ${style.selected}`} /> : <span className={`${style.rectangle} ${style.unselected}`} />}
+                                    </button>
+                                ))}
+                            </div>
+                            <span className={style.verticalSeparator} />
+                        </div>
+                        {itemsData[item] !== undefined ?
+                            <div className={style.explanation}>
+                                <div>
+                                    <h2 className={style.explanationTitle}>
+                                        CAD ${itemsData[item]} per year
+                                    </h2>
+                                    <p className={style.explanationDescription}>
+                                        Membership fee for {item.toString().toLowerCase()}
+                                    </p>
+                                </div>
+                                <Button color="green" selected={true} onClick={() => alert('Redirecting to Stripe API...')}>
+                                    {`Join as a ${item.toString().toLowerCase()}`}
+                                </Button>
+                            </div>
+                            :
+                             <div className={style.explanation}>
+                                <h2 className={style.explanationTitle}>
+                                    Make a donation of any amount you wish
+                                </h2>
+                                <Button color="green" selected={true} onClick={() => alert('Redirecting to Stripe API...')}>
+                                    Donate to STORK
+                                </Button>
+                            </div>
+                        }
                     </div>
-                    <a href={stripeLink} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                            <Button color="black">Join us</Button>
-                    </a>
-                </div>
-             </div>
+                )
+            }
         </div>
     )
 }
