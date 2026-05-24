@@ -1,12 +1,9 @@
-import { useNavigate } from 'react-router-dom';
 import style from './index.module.scss';
 
 import uo from '../../../assets/illustrations/uo.png';
 import vu from '../../../assets/illustrations/vu.png';
 
 export const HomeSupport = () => {
-    const navigate = useNavigate();
-
     return (
         <div className={style.support}>
             <h1 className={style.title}>They support us</h1>
