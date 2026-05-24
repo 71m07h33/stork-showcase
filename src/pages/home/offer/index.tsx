@@ -17,11 +17,11 @@ const itemsData: Record<Items, { title: string; description: string }> = {
         description: 'It is the first community-led open-access repository dedicated to kinesiology and health research.<br/><br/>It is a platform that allows researchers to share their work and collaborate with others.',
     },
     [Items.CommunicationInKinesiology]: {
-        title: 'Communications in Kinesiology',
+        title: 'Communications in Kinesiology (CiK)',
         description: 'Communications in Kinesiology is the official journal of STORK.<br/><br/>It champions rigorous, transparent research practices to enhance reproducibility and integrity across all domains related to movement sciences, including sports, exercise, physical activity, physiology, biomechanics, neuroscience, rehabilitation sciences, nutrition.<br/>It welcomes empirical work that prioritizes methodological soundness over positive results, fostering a new era of trustworthy scholarship.<br/><br/>It is free for both authors and readers. No fees, no paywalls. Just research, shared openly. Run by researchers, for researchers. We are lucky to have support from the University of Ottawa Library and the Free Journal Network to keep it free and growing.',
     },
     [Items.KinesiologyBooks]: {
-        title: 'Kinesiology Books',
+        title: 'Kinesiology Books (K-Books)',
         description: 'Kinesiology Books offers comprehensive resources that support learning, research, and teaching in the movement sciences.<br/><br/>These open-access books promote transparency and reproducibility by making high-quality information freely available to students, educators, and researchers worldwide.',
     },
     [Items.Webinars]: {
